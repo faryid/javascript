@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Document</title>
+	</head>
+	
+	<body>
+		<script>
+			// person object
+			const person = {
+				firstName: "Muhammad",
+				lastName: "Haryansyah"
+			};
+			
+			// Dot notation and array notation
+			const firstName = person.firstName;
+			const lastName = person['lastName'];
+			
+			console.log(firstName, lastName);
+			
+			// Add new field in person object
+			person.bodies = [180, 70];
+			
+			const height = person.bodies[0];
+			const weight = person.bodies[1];
+			
+			console.log("Your height is", height, "cm");
+			console.log("Your weight is", weight, "kg");
+		</script>
+	</body>
+</html>

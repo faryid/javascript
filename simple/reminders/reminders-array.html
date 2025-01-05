@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+        // Create a list of reminders.
+        // const reminders = ["Log 'Hello, World!' to console"];
+        const reminders = [];
+
+        // Add a reminder with index.
+        reminders[0] = "Log 'Hello, World!' to console";
+        reminders[reminders.length] = "Learn basics JavaScript";
+
+        // JavaScript best practice.
+        reminders.push("Understand JavaScript best practices");
+
+        // Update data within the array.
+        reminders[0] = "Log 'Hello, JavaScript!' to console";
+
+        // Delete a reminder with index.
+        reminders.push("Delete test");
+        delete reminders[reminders.length - 1];
+
+        // JavaScript delete best practice.
+        reminders.splice(3, 1);
+
+        console.log(reminders[2]); // Access data within the array.
+
+        reminders.forEach((reminder) => console.log(reminder));
+
+        function showAllReminders() {
+            for (let i = 0; i < reminders.length; i++) {
+                console.log(reminders[i]);
+            }
+        }
+
+        function showAllInReminders() {
+            for (let i in reminders) {
+                console.log(reminders[i]);
+            }
+        }
+
+        function showAllOfReminders() {
+            for (let reminder of reminders) {
+                console.log(reminder);
+            }
+        }
+	</script>
+</body>
+</html>

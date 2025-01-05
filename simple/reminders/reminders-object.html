@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+</head>
+
+<body>
+	<script>
+        // Create an object of reminder.
+        // const reminder = {
+        //     text: "Understand JavaScript best practices",
+        //     time: "Tue, 6/11/24, 4:00 AM"
+        // };
+        const reminder = {};
+
+        // Add field to reminder object.
+        reminder.text = "Understand JavaScript best practices";
+        reminder["time"] = "Mon, 6/10/24, 4:00 AM";
+
+        // Update data within the object.
+        reminder.text = "Understand the basics of JavaScript";
+        reminder["time"] = "Mon, 6/10/24, 5:00 AM";
+
+        // Delete field within the object.
+        reminder.repeat = "twice";
+        reminder["note"] = "Use proper JavaScript code editor";
+
+        delete reminder.repeat;
+        delete reminder["note"];
+
+        reminder.status = "pending";
+
+        const format = `reminder: ${reminder["time"]}, ${reminder.text}`;
+        console.log(format); // Access data within the object.
+	</script>
+</body>
+</html>

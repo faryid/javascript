@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+</head>
+
+<body>
+	<script>
+        // Create a list of reminders.
+        const reminders = [
+            // Create an object of reminder.
+            {
+                text: "Log 'Hello, World!' to console",
+                time: null
+            }
+        ];
+
+        // Add item to reminders list.
+        reminders.push({
+            text: "Learn basics JavaScript",
+            time: null
+        });
+
+        // Update data within the object.
+        // reminders[0].text = "Understand the basics of JavaScript";
+        // reminders[0]["time"] = "Mon, 6/10/24, 5:00 AM";
+
+        // // Delete field within the object.
+        // delete reminders[0];
+        // delete reminders[1].time;
+
+        reminders.forEach((reminder) => {
+            let format;
+
+            if (reminder.time !== null)
+                format = `reminder: ${reminder["time"]}, ${reminder.text}`;
+            else
+                format = `reminder: ${reminder.text}`;
+            
+            console.log(format); // Access data within the object.
+        });
+	</script>
+</body>
+</html>

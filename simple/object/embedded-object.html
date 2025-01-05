@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const Person = {
+            firstName: "",
+            lastName: "",
+            gender: "",
+            age: 0,
+        };
+
+        const Address = {
+            country: "",
+            region: "",
+            city: "",
+        };
+
+        const firstPerson = Object.assign({}, Person);
+        const secondPerson = Object.assign({}, Person);
+
+        firstPerson.gender = "Male";
+        secondPerson.gender = "Female";
+
+        const firstAddress = Object.assign({}, Address);
+        const secondAddress = Object.assign({}, Address);
+
+        firstAddress.city = "Bogor";
+        secondAddress.city = "Sydney";
+
+        firstPerson.address = firstAddress;
+        secondPerson.address = secondAddress;
+        // Solve pointer address in Person object
+    </script>
+</body>
+</html>

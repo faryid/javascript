@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Document</title>
+	</head>
+	
+	<body>
+		<script>
+			// address prototype
+			const address = {
+				country: "",
+				region:  "",
+				city:	 ""
+			};
+			
+			// Instantiate address as person object.
+			const person = Object.assign({}, address);
+
+			// Get all keys within the person object.
+			const personKeys = Object.keys(person);
+			
+			personKeys.forEach((key) => {
+				let value;
+				
+				do {
+					value = prompt("Enter your " + key);
+				} while (value === "")
+				// Set the value
+				person[key] = value;
+			});
+			
+			for (const key in person) {
+				console.log(`${key}: ${person[key]}`);
+			}
+		</script>
+	</body>
+</html>
