@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Download Process</title>
+  </head>
+  <body>
+    <script>
+      // Files manager
+      const FILES = [];
+
+      // Download all files
+      const notepadPlus = download("Notepad++", 3);
+      const jetBrains = download("JetBrains IDE", 17);
+      const visualStudio = download("Visual Studio", 7);
+      const androidStudio = download("Android Studio", 23);
+
+      // Other process
+      console.log("Other process start");
+
+      setTimeout(function () {
+        // Other process end after 5 secs.
+        console.log("Other process ended");
+      }, 5000);
+
+      Promise.all([notepadPlus, jetBrains, visualStudio, androidStudio])
+      .then((values) => values.forEach((value) => save(value)));
+      // Files added after all previous promises are finished.
+
+      // Saving API
+      function save(file) {
+        return new Promise((resolve, reject) => {
+          try {
+            if (file.size > 20) {
+              resolve(false);
+              return;
+            }
+
+            file.created_at = new Date();
+            FILES.push(file);
+            resolve(true);
+          } catch (error) {
+            reject(`${error.name}| ${error.message}`);
+          }
+        });
+      }
+
+      // Download API
+      function download(name, size) {
+        return new Promise((resolve, reject) => {
+          try {
+            console.log(`Start downloading ${name}...`);
+
+            let downloaded = 0;
+
+            const downloadProcess = setInterval(() => {
+              downloaded++;
+
+              // try block cannot catch error from this comparison.
+              // if (downloaded === downloadSize) {}
+              if (downloaded === size) {
+                console.log(`Download ${name} successfully`);
+
+                resolve({ name, size });
+                clearInterval(downloadProcess);
+              }
+            }, 1000);
+          } catch (error) {
+            reject(`${error.name}| ${error.message}`);
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

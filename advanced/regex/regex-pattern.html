@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  
+  <body>
+    <p id="greeting"></p>
+    <p id="date-now"></p>
+
+    <button onclick="setNewWord()">Change it</button>
+
+    <button onclick="showDate()">Show Date</button>
+
+    <script>
+      const word = "Hello, World!";
+      const regexPattern = /World/i;
+
+      document.getElementById("greeting").innerHTML = word;
+
+      function setNewWord() {
+        document.getElementById("greeting").innerHTML = word.replace(
+          regexPattern,
+          "JavaScript"
+        );
+      }
+
+      function showDate() {
+        document.getElementById("greeting").innerHTML = new Date(
+          "January 17, 2002"
+        );
+        document.getElementById("date-now").innerHTML = new Date();
+      }
+
+      (function () {
+        console.log("Hello, World!");
+      })();
+    </script>
+  </body>
+</html>

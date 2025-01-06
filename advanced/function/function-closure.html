@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // Create add closure
+      const add = () => {
+        // Create counter variable
+        let counter = 0;
+
+        // Return the closure function
+        return () => {
+          return ++counter;
+        };
+      };
+
+      // Instantiate add
+      const addCounter = add();
+
+      console.log(addCounter());
+    </script>
+  </body>
+</html>

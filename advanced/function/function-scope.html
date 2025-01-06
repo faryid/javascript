@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      age = 17;
+
+      // Create Person constructor.
+      function Person() {
+        this.age = 19;
+        this.gender = "Man";
+
+        const showAge = () => {
+          console.log("Age within Person object: ", this.age);
+        };
+
+        showAge();
+      }
+
+      // Instantiate Person
+      const person = new Person();
+
+      // Global variable won't change if we instantiate.
+      console.log("Age within upper scope: ", this.age);
+    </script>
+  </body>
+</html>

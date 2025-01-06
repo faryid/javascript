@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Download Process</title>
+  </head>
+  <body>
+    <script>
+      // Files manager
+      const FILES = [];
+
+      // Download all file
+      const runDownload = async () => {
+        const notepadPlus = await download("Notepad++", 3);
+        console.log(notepadPlus);
+
+        const jetBrains = await download("JetBrains IDE", 17);
+        console.log(jetBrains);
+
+        const sublimeText = await download("Sublime Text", 5);
+        console.log(sublimeText);
+
+        const visualStudio = await download("Visual Studio", 7);
+        console.log(visualStudio);
+
+        const androidStudio = await download("Android Studio", 23);
+        console.log(androidStudio);
+
+        console.log("All Download Complete");
+      };
+
+      // Run download
+      runDownload();
+
+      // Other process
+      console.log("Other process start");
+
+      setTimeout(function () {
+        // Other process end after 5 secs.
+        console.log("Other process ended");
+      }, 5000);
+
+      // Saving API
+      function save(file) {
+        return new Promise((resolve, reject) => {
+          try {
+            if (file.size > 20) {
+              resolve(false);
+              return;
+            }
+
+            file.created_at = new Date();
+            FILES.push(file);
+            resolve(true);
+          } catch (error) {
+            reject(`${error.name}| ${error.message}`);
+          }
+        });
+      }
+
+      // Download API
+      function download(name, size) {
+        return new Promise((resolve, reject) => {
+          try {
+            console.log(`Start downloading ${name}...`);
+
+            let downloaded = 0;
+
+            const downloadProcess = setInterval(() => {
+              downloaded++;
+
+              // try block cannot catch error from this comparison.
+              // if (downloaded === downloadSize) {}
+              if (downloaded === size) {
+                console.log(`Download ${name} successfully`);
+
+                resolve({ name, size });
+                clearInterval(downloadProcess);
+              }
+            }, 1000);
+          } catch (error) {
+            reject(`${error.name}| ${error.message}`);
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
