@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Input User Data</title>
+  <link type="text/css" rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h2>Input User Data</h2>
+
+    <form
+      id="user-data" method="POST"
+      onsubmit="return processData()" action="../index.html"
+    >
+      <label>
+        <span class="left">First name :</span>
+        <input type="text" id="first-name" name="first-name">
+      </label>
+      <label>
+        <span class="left">Last name :</span>
+        <input type="text" id="last-name" name="last-name">
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script src="../static/js/main.js"></script>
+</body>
+</html>
