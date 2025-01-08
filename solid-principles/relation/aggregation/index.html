@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relation | Aggregation</title>
+  </head>
+  <body>
+    <p>Shop <> 1 ---> 1 Seller</p>
+    <script>
+      class Shop {
+        constructor(id, name) {
+          this._id = id;
+          this._name = name;
+        }
+
+        set seller(value) {
+          this._seller = value;
+        }
+
+        get seller() {
+          return this._seller;
+        }
+      }
+
+      class Seller {
+        constructor(id, name) {
+          this._id = id;
+          this._name = name;
+        }
+      }
+    </script>
+  </body>
+</html>
