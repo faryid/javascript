@@ -1,0 +1,145 @@
+/* Base styles */
+body {
+  line-height: 1.5em;
+  font-family: Arial, Helvetica, sans-seif;
+  overflow: hidden;
+}
+
+/* Reusables */
+.constrain {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1px 20px;
+}
+
+.header-nav,
+.favorite-foods-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header-nav li a,
+.favorite-foods-nav li a {
+  display: block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.header-nav li a:hover,
+.favorite-foods-nav li a:hover {
+  background-color: #808080;
+}
+
+/* Header */
+.header {
+  background-color: black;
+  height: 104px;
+}
+
+.header-nav li {
+  float: left;
+  border-right: 1px solid #bbb;
+}
+
+.header-nav li:last-child {
+  border-right: none;
+}
+
+.header-nav li a.active {
+  background-color: #09f;
+}
+
+/* Content */
+.aside {
+  float: left;
+  width: 240px;
+  background-color: black;
+  color: white;
+}
+
+.favorite-foods {
+  float: left;
+  width: calc(100% - 240px);
+  height: calc(100vh - 113px);
+  overflow: hidden;
+}
+
+.article {
+  margin: 20px;
+}
+
+.favorite-foods .article {
+  width: 100%;
+  margin-top: 0;
+  margin-left: 1px;
+  height: inherit;
+  overflow: auto;
+}
+
+/* Sidebar */
+.favorite-foods-nav li {
+  border-bottom: 1px solid #bbb;
+}
+
+.favorite-foods-nav li:last-child {
+  border-bottom: none;
+}
+
+/* Card view */
+.favorite-foods-card {
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+
+  background-color: black;
+  margin-bottom: 1px;
+  transition: 0.3s;
+
+  /* border-radius: 5px; */
+  /* 5px rounded corners */
+}
+
+.favorite-foods-card img {
+  width: 100%;
+
+  /* border-radius: 5px 5px 0 0; */
+}
+
+.favorite-foods-text {
+  padding: 2px 16px;
+  color: white;
+}
+
+/* Media queries */
+@media (max-width: 546px) {
+  body {
+    overflow: visible;
+    padding: 0;
+    margin: 0;
+  }
+
+  .constrain {
+    padding: 0;
+  }
+
+  .aside {
+    width: 100%;
+  }
+
+  .favorite-foods-nav li {
+    float: left;
+  }
+
+  .favorite-foods-nav li:last-child {
+    border-bottom: 1px solid #bbb;
+  }
+
+  .favorite-foods {
+    width: 100%;
+    height: 100%;
+  }
+
+  .favorite-foods .article {
+    margin: 0;
+  }
+}
